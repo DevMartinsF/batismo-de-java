@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 @Table (name = "tb_missoes")
 public class MissoesModel {
     @Id
-    @GeneratedValue (strategy = GenerationType.UUID)
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private RankDeMissoes rank;
