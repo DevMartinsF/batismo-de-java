@@ -1,4 +1,4 @@
-package dev.martinsf.batismo_de_java;
+package dev.martinsf.batismo_de_java.Ninjas;
 
 import jakarta.persistence.*;
 
