@@ -1,6 +1,9 @@
 package dev.martinsf.batismo_de_java.Missoes;
 
+import dev.martinsf.batismo_de_java.Ninjas.NinjaModel;
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table (name = "tb_missoes")
@@ -10,8 +13,10 @@ public class MissoesModel {
     private Long id;
     private String nome;
     private RankDeMissoes rank;
+    private List<NinjaModel> ninjasDaMissao;
 
-    public MissoesModel(Long id, String nome, RankDeMissoes rank) {
+    public MissoesModel(Long id, String nome, RankDeMissoes rank, List<NinjaModel> ninjasDaMissao) {
+        this.ninjasDaMissao = ninjasDaMissao;
         this.id = id;
         this.nome = nome;
         this.rank = rank;
@@ -29,6 +34,10 @@ public class MissoesModel {
         return nome;
     }
 
+    public List<NinjaModel> getNinjasDaMissao() {
+        return ninjasDaMissao;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
@@ -39,5 +48,9 @@ public class MissoesModel {
 
     public void setRank(RankDeMissoes rank) {
         this.rank = rank;
+    }
+
+    public void setNinjasDaMissao(List<NinjaModel> ninjasDaMissao) {
+        this.ninjasDaMissao = ninjasDaMissao;
     }
 }
