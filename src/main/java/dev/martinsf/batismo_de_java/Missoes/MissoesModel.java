@@ -13,6 +13,7 @@ public class MissoesModel {
     private Long id;
     private String nome;
     private RankDeMissoes rank;
+    @OneToMany
     private List<NinjaModel> ninjasDaMissao;
 
     public MissoesModel(Long id, String nome, RankDeMissoes rank, List<NinjaModel> ninjasDaMissao) {
@@ -25,7 +26,6 @@ public class MissoesModel {
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }

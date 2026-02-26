@@ -1,5 +1,6 @@
 package dev.martinsf.batismo_de_java.Ninjas;
 
+import dev.martinsf.batismo_de_java.Missoes.MissoesModel;
 import jakarta.persistence.*;
 
 @Entity
@@ -11,6 +12,9 @@ public class NinjaModel {
     private  String nome;
     private  int idade;
     private  String gmail;
+
+    @ManyToMany
+    private MissoesModel missao;
 
     public NinjaModel(Long id, String nome, int idade, String gmail) {
         this.id = id;
