@@ -1,4 +1,6 @@
 package dev.martinsf.batismo_de_java.Missoes;
 
-public class MissoesRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface MissoesRepository extends JpaRepository {
 }
