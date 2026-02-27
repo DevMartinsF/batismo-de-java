@@ -9,11 +9,12 @@ public class NinjaModel {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
+
     private  String nome;
     private  int idade;
     private  String gmail;
 
-    @ManyToMany
+    @ManyToOne
     private MissoesModel missao;
 
     public NinjaModel(Long id, String nome, int idade, String gmail) {

@@ -17,10 +17,10 @@ public class MissoesModel {
     private List<NinjaModel> ninjasDaMissao;
 
     public MissoesModel(Long id, String nome, RankDeMissoes rank, List<NinjaModel> ninjasDaMissao) {
-        this.ninjasDaMissao = ninjasDaMissao;
         this.id = id;
         this.nome = nome;
         this.rank = rank;
+        this.ninjasDaMissao = ninjasDaMissao;
     }
 
     public Long getId() {
