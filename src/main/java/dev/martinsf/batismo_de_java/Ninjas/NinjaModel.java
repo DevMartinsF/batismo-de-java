@@ -15,6 +15,7 @@ public class NinjaModel {
     private  String gmail;
 
     @ManyToOne
+    @JoinColumn (name = "missao_id")
     private MissoesModel missao;
 
     public NinjaModel(Long id, String nome, int idade, String gmail) {
