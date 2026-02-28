@@ -1,4 +1,4 @@
-package dev.martinsf.batismo_de_java;xg
+package dev.martinsf.batismo_de_java;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
