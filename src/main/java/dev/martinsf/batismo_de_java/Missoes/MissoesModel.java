@@ -16,8 +16,7 @@ public class MissoesModel {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
-    @Enumerated (EnumType.STRING)
-    private RankDeMissoes rank;
+    private String rank;
     @OneToMany (mappedBy = "missao")
     private List<NinjaModel> ninjasDaMissao;
 }
