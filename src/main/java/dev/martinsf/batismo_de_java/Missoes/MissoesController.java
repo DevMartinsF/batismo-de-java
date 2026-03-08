@@ -21,9 +21,9 @@ public class MissoesController {
     public List <MissoesModel> mostrarTodasAsMissoes() {
     return missoesService.mostrarMissoes();
     }
-    @GetMapping ("/mostarMissaoID")
-    public String mostrarMissaoId() {
-        return "Missoes ID";
+    @GetMapping ("/mostarMissaoID/{id}")
+    public MissoesModel mostrarMissaoId(@PathVariable Long id) {
+        return missoesService.mostrarNinjaPorId(id);
     }
     @PutMapping ("/atualizarMissao")
     public String atualizarMissao (){
