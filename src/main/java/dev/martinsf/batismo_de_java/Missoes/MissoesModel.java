@@ -1,5 +1,6 @@
 package dev.martinsf.batismo_de_java.Missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.martinsf.batismo_de_java.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,5 +21,6 @@ public class MissoesModel {
     private String nome;
     private String rank;
     @OneToMany (mappedBy = "missao")
+    @JsonIgnore
     private List<NinjaModel> ninjasDaMissao;
 }
