@@ -2,9 +2,17 @@ package dev.martinsf.batismo_de_java.Ninjas;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping ("ninjas")
+@RequestMapping ("/ninjas")
 public class NinjaController {
+    private NinjaService ninjaService;
+
+    public NinjaController(NinjaService ninjaService) {
+        this.ninjaService = ninjaService;
+    }
+
     @GetMapping("/boasvindas")
     public String boasVindas (){
         return "Boas Vindas";
@@ -16,8 +24,8 @@ public class NinjaController {
     }
 
     @GetMapping ("/mostrarNinjas")
-    public String mostarNinjas (){
-        return "Ninjas";
+    public List <NinjaModel> mostarNinjas (){
+        return ninjaService.listarNinjas();
     }
 
     @GetMapping ("/mostarNinjaID")
