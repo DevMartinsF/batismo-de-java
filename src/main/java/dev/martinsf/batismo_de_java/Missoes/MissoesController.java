@@ -3,27 +3,27 @@ package dev.martinsf.batismo_de_java.Missoes;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping ("missoes")
 public class MissoesController {
 
-    @PostMapping (name = "/adicionarmissao")
+    @PostMapping (name = "/adicionarMissao")
     public String adicionarMissao(){
         return "Missao adicionada";
     }
-    @GetMapping (name = "/mostrarmissoes")
+    @GetMapping (name = "/mostrarMissoes")
     public String mostrarTodasAsMissoes() {
     return "Todas Missoes";
     }
-    @GetMapping (name = "/mostarmissaoid")
+    @GetMapping (name = "/mostarMissaoID")
     public String mostrarMissaoId() {
         return "Missoes ID";
     }
-    @PutMapping ("/atualizarM")
+    @PutMapping ("/atualizarMissao")
     public String atualizarMissao (){
         return "Missao atualizada";
     }
 
-    @DeleteMapping (name = "/deletarM")
+    @DeleteMapping (name = "/deletarMissao")
     public String deletarMissao(){
         return "Missao Deletada";
     }
