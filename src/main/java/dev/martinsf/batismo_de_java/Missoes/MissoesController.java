@@ -6,15 +6,15 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping ("missoes")
 public class MissoesController {
 
-    @PostMapping (name = "/adicionarMissao")
+    @PostMapping ("/adicionarMissao")
     public String adicionarMissao(){
         return "Missao adicionada";
     }
-    @GetMapping (name = "/mostrarMissoes")
+    @GetMapping ("/mostrarMissoes")
     public String mostrarTodasAsMissoes() {
     return "Todas Missoes";
     }
-    @GetMapping (name = "/mostarMissaoID")
+    @GetMapping ("/mostarMissaoID")
     public String mostrarMissaoId() {
         return "Missoes ID";
     }
@@ -23,7 +23,7 @@ public class MissoesController {
         return "Missao atualizada";
     }
 
-    @DeleteMapping (name = "/deletarMissao")
+    @DeleteMapping ("/deletarMissao")
     public String deletarMissao(){
         return "Missao Deletada";
     }

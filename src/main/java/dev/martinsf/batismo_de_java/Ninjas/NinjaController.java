@@ -10,7 +10,7 @@ public class NinjaController {
         return "Boas Vindas";
     }
 
-    @PostMapping (name ="/adicionarNinjas")
+    @PostMapping ("/adicionarNinjas")
     public String criarNinja(){
         return "Criado";
     }
