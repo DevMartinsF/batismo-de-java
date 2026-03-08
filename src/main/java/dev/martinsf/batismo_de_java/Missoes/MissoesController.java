@@ -15,7 +15,9 @@ public class MissoesController {
     return "Todas Missoes";
     }
     @GetMapping (name = "/mostarmissaoid")
-
+    public String mostrarMissaoId() {
+        return "Missoes ID";
+    }
     @PutMapping ("/atualizarM")
     public String atualizarMissao (){
         return "Missao atualizada";
