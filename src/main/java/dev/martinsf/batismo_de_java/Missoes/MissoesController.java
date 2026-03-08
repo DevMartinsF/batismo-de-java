@@ -3,7 +3,7 @@ package dev.martinsf.batismo_de_java.Missoes;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping ("missoes")
+@RequestMapping ("/missoes")
 public class MissoesController {
 
     @PostMapping ("/adicionarMissao")
