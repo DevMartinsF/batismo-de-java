@@ -23,7 +23,7 @@ public class MissoesController {
     }
     @GetMapping ("/mostarMissaoID/{id}")
     public MissoesModel mostrarMissaoId(@PathVariable Long id) {
-        return missoesService.mostrarNinjaPorId(id);
+        return missoesService.mostrarMissaoPorId(id);
     }
     @PutMapping ("/atualizarMissao")
     public String atualizarMissao (){

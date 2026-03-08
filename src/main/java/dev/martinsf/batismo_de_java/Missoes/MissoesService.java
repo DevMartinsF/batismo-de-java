@@ -18,7 +18,7 @@ private MissoesRepository missoesRepository;
         return missoesRepository.findAll();
     }
 
-    public MissoesModel mostrarNinjaPorId(Long id){
+    public MissoesModel mostrarMissaoPorId(Long id){
         Optional <MissoesModel> ninjaId = missoesRepository.findById(id);
         return ninjaId.orElse(null);
     }
