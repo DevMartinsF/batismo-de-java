@@ -1,6 +1,5 @@
 package dev.martinsf.batismo_de_java.Missoes;
 
-import dev.martinsf.batismo_de_java.Ninjas.NinjaModel;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
