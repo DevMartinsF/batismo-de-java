@@ -17,21 +17,24 @@ public class MissoesController {
     public MissoesModel adicionarMissao(@RequestBody MissoesModel novaMissao){
         return missoesService.adicionarMissao(novaMissao);
     }
+
     @GetMapping ("/mostrarMissoes")
     public List <MissoesModel> mostrarTodasAsMissoes() {
     return missoesService.mostrarMissoes();
     }
+
     @GetMapping ("/mostarMissaoID/{id}")
     public MissoesModel mostrarMissaoId(@PathVariable Long id) {
         return missoesService.mostrarMissaoPorId(id);
     }
+
     @PutMapping ("/atualizarMissao")
     public String atualizarMissao (){
         return "Missao atualizada";
     }
 
-    @DeleteMapping ("/deletarMissao")
-    public String deletarMissao(){
-        return "Missao Deletada";
+    @DeleteMapping ("/deletarMissao/{id}")
+    public void deletarMissao(@PathVariable Long id){
+        missoesService.deletarMissao(id);
     }
 }
