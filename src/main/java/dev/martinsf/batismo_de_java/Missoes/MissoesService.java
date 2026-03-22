@@ -21,4 +21,7 @@ private MissoesRepository missoesRepository;
         Optional <MissoesModel> ninjaId = missoesRepository.findById(id);
         return ninjaId.orElse(null);
     }
+    public MissoesModel adicionarMissao(MissoesModel novaMissao){
+        return missoesRepository.save(novaMissao);
+    }
 }
