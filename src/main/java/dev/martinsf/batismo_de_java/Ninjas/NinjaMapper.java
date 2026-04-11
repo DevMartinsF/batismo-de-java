@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class NinjaMapper{
 
-    public NinjaModel mapper(NinjaDTO ninjaDTO) {
+    public NinjaModel mapperModel(NinjaDTO ninjaDTO) {
 
         NinjaModel ninjaModel = new NinjaModel();
         ninjaModel.setId(ninjaDTO.getId());
