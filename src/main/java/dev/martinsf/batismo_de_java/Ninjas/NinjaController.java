@@ -14,22 +14,24 @@ public class NinjaController {
         this.ninjaService = ninjaService;
     }
 
-    @GetMapping("/boasvindas")
-    public String boasVindas() {
-        return "Boas Vindas";
-    }
-
     @PostMapping("/adicionarNinjas")
     public ResponseEntity<String> adicionarNinja(@RequestBody NinjaDTO novoNinja) {
         NinjaDTO ninjaDTO = ninjaService.adicionarNinja(novoNinja);
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body("O Ninja " + novoNinja.getNome() + " foi criado");
+        if (ninjaDTO != null) {
+            return ResponseEntity.status(HttpStatus.CREATED).body("O Ninja " + novoNinja.getNome() + " foi criado");
+        }else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Não foi possivel criar o novo ninja");
+        }
     }
 
     @GetMapping("/mostrarNinjas")
-    public ResponseEntity<List<NinjaDTO>> mostarNinjas() {
+    public ResponseEntity<?> mostarNinjas() {
         List<NinjaDTO>listaDeNinjas = ninjaService.listarNinjas();
-        return ResponseEntity.ok(listaDeNinjas);
+       if (listaDeNinjas.isEmpty()){
+       return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Nenhum ninja cadastrado");
+           }else {
+           return ResponseEntity.ok(listaDeNinjas);
+       }
     }
 
     @GetMapping("/mostarNinjaID/{id}")
@@ -37,8 +39,7 @@ public class NinjaController {
         NinjaDTO ninjaDTO = ninjaService.listarNinjaPorId(id);
         if ( ninjaDTO != null) {
             return ResponseEntity.status(HttpStatus.FOUND).body(ninjaDTO);
-        }
-        else {
+        } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Ninja não encontrado");
         }
     }
@@ -48,9 +49,8 @@ public class NinjaController {
         NinjaDTO ninja = ninjaService.atualizarNinja(id, ninjaAtualizado);
         if (ninja != null){
             return ResponseEntity.ok(ninja);
-        }
-        else {
-            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body("O ninja não pode ser atualizado, revise as informações e tente novamente");
+        } else {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("O ninja não pode ser atualizado, revise as informações e tente novamente");
         }
     }
 
